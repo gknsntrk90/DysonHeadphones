@@ -1,0 +1,204 @@
+/*Sıfırlama yapıyoruz*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none; /**yazılarda ki alt çizgiyi siliyoruz*/
+    font-family: sans-serif;
+}
+
+/*başlığı yapıyoruz*/
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    padding: 10px 10%; /**sağdan soldan padding ile boşluk veriyoryz*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.447); /**alttan border çizgisi veriyoruz**/
+    z-index: 999;
+    /**bu ikisi sayesinde ekrandaki ürünlerimizi yazılarımızı sağ ve soldan 5 saniye içinde içe doğru hareket ettiriyoruz**/
+    background-color: transparent;
+    transition: all .5s ease-in-out;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+/*Header da ki menü yazılarımıza renk verdik*/
+.menu li a{
+    color: #000;
+    transition: all .5s;
+    font-size: 18px;
+}
+
+/*Hover ile header başlıklarımıza mouse üzerine geldiğinde renk değiştirme veriyoruz*/
+.menu li a:hover{
+    color: rgb(28, 28, 255);
+}
+
+/*Bar seçeneğimizle oynuyoruz burada*/
+.bars{
+    font-size: 18px;
+    display: none;
+}
+
+.bgheader{
+    background-color: #fff;
+}
+
+
+/*button a mouse ile yaklaşınca efect atıyoruz*/
+.hero_info button, header button{
+    height: 40px;
+    width: 150px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    transition: all .5s ease-in-out;
+    border: 1px solid #000;
+}
+/*button a mouse ile yaklaşınca efect atıyoruz*/
+.hero_info button:hover,header button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+/**Container içinde ki arka plan rengini değiştiriyoruz**/
+.container{
+    background: linear-gradient(42deg, rgb(152, 182, 236) 3%,
+    rgb(38, 162, 168) 62%, rgb(212, 185, 212) 87%,
+    rgb(11, 52, 218) 100%);
+    
+}
+
+.hero{
+    /*sağdan ve soldan padding veriyoruz boşluk için*/
+    padding: 0 5%;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    min-height: 100vh; /*tüm ğencereyi renk ile kaplıyoruz*/
+}
+
+.hero,.detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.hero_info{
+    width: 50%;
+    text-decoration: none;
+}
+
+.hero_info h1{
+    font-size: 3.5rem;
+    color: rgb(1, 1, 77);
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.name_tag{
+    color: gold;
+}
+
+.hero_info h3{
+    font-size: 1.5rem;
+    position: relative;
+    margin-bottom: 40px;
+    text-decoration: none;
+}
+.hero_info h3::after,.detail1 h4::after{
+    content: "";
+    width: 50%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 2px;
+    background-color: rgb(1, 1, 77);
+    text-decoration: none;
+}
+
+.detail{
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.dteail1{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.detail1 h4{
+    text-decoration: none;
+    font-size: 1.3rem;
+    position: relative;
+}
+
+.hero_img{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+/*fotoğrafı düzenliyoruz*/
+.hero_img img{
+    width: 90%;
+    transition: all .5s;
+}
+.hero_img img:hover{
+    /*fotoğrafı yakınlaştırıp uzaklaştırıyoruz mouse üzerine gelince*/
+    transform: scale(1.1);
+}
+
+.reating{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.reating i{
+    color: gold;
+}
+
+/*! MOBİLE*/
+@media (max-width:2000px){
+    .hero{
+        width: 1600px;
+        margin: auto;
+    }
+}
+@media (max-width:1600px){
+    .hero{
+        width: auto;
+    }
+    header{
+        padding: 10px 5%;
+    }
+}
+@media (max-width:1300px){
+    .hero_info h1{
+        font-size: 3rem;
+    }
+}
+@media (max-width:1100){
+    .hero{
+        flex-direction: column-reverse;
+        height: auto;
+        padding: 20px 5%;
+        padding-top: 100px;
+    }
+}
